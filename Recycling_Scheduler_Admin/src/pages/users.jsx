@@ -16,7 +16,7 @@ export default function Users() {
                 <div className="list">
                     <div><Link to={'/clients'}>Clients</Link></div>
                     <div><Link to={'/users'}>Users</Link></div>
-                    <div>Monthly Reports</div>
+                    <div><Link to={'/reports'}>Monthly Reports</Link></div>
                     <div>Data Review</div>
                 </div>
             </div>

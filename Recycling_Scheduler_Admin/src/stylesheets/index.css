@@ -91,6 +91,20 @@
   font: 700 20px Inter, sans-serif;
 }
 
+.create_report_btn {
+  all: unset;
+}
+
+.create_report {
+  color: #fff;
+  white-space: nowrap;
+  border-radius: 50px;
+  background-color: #0038a8;
+  justify-content: center;
+  padding: 18px 36px;
+  font: 700 20px Inter, sans-serif;
+}
+
 .leftnav {
   display: flex;
   flex-direction: column;
