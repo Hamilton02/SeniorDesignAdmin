@@ -56,7 +56,7 @@
   padding: 3px 14px 3px 28px;
 }
 
-.search_input, ::placeholder {
+.search_input, .search_input ::placeholder {
   all: unset;
   color: #875053;
   margin: auto 0;
@@ -333,7 +333,7 @@
   font: 700 30px Inter, sans-serif;
 }
 
-.popup_field_input, ::placeholder {
+.popup_field_input, .popup_field_input ::placeholder {
   background-color: #fff;
   align-self: stretch;
   display: flex;
