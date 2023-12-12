@@ -7,7 +7,8 @@ import {
 import "./stylesheets/index.css";
 import Clients from "./pages/clients";
 import Users from "./pages/users";
-import Reports from "./pages/reports"
+import Reports from "./pages/reports";
+import Add_Client from "./pages/add_client";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/reports",
     element: <Reports />,
+  },
+  {
+    path: "/add",
+    element: <Add_Client />,
   },
 ]);
 

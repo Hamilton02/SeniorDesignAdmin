@@ -22,7 +22,7 @@ export default function Users() {
             </div>
             <div className="table">
                 <div className="search_add_btns">
-                    <button className="add_client_btn"><div className="add_client">+ Add Client</div></button>
+                    <button className="add_user_btn"><div className="add_user">+ Add User</div></button>
                 </div>
                 <div className="row-th">
                     <div className="th">

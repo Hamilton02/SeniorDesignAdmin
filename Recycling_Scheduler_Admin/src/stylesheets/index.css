@@ -91,6 +91,20 @@
   font: 700 20px Inter, sans-serif;
 }
 
+.add_user_btn {
+  all: unset;
+}
+
+.add_user {
+  color: #fff;
+  white-space: nowrap;
+  border-radius: 50px;
+  background-color: #0038a8;
+  justify-content: center;
+  padding: 18px 36px;
+  font: 700 20px Inter, sans-serif;
+}
+
 .create_report_btn {
   all: unset;
 }
@@ -245,4 +259,122 @@
   white-space: nowrap;
   align-self: center;
   font: 400 30px Inter, sans-serif;
+}
+
+.popup_body {
+  border-radius: 32px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20vh 70vh;
+}
+
+.popup {
+  border-radius: 32px;
+  border: 8px solid #a0c49a;
+  background-color: #0038a8;
+  display: flex;
+  width: 562px;
+  height: 659px;
+  flex-direction: column;
+  padding: 38px 0;
+}
+
+.client_info {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  padding: 0 25px;
+}
+
+.popup_header {
+  align-self: stretch;
+  display: flex;
+  padding-right: 26px;
+  align-items: start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.popup_title {
+  color: #ffe77d;
+  margin-top: 15px;
+  flex-grow: 1;
+  flex-basis: auto;
+  font: 700 40px Inter, sans-serif;
+}
+
+.popup_close {
+  color: #000;
+  border-radius: 8px;
+  background-color: #a91a1a;
+  height: 46px;
+  width: 46px;
+  font: 700 30px Inter, sans-serif;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.popup_field {
+  align-self: stretch;
+  display: flex;
+  margin-top: 58px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.popup_field_title {
+  color: #fff;
+  flex-grow: 1;
+  flex-basis: auto;
+  margin: auto 0;
+  font: 700 30px Inter, sans-serif;
+}
+
+.popup_field_input, ::placeholder {
+  background-color: #fff;
+  align-self: stretch;
+  display: flex;
+  width: 286px;
+  max-width: 100%;
+  height: 41px;
+  flex-direction: column;
+  color: #000;
+  margin: auto 0;
+  font: 400 30px Inter, sans-serif;
+}
+
+.add_location_btn {
+  all: unset;
+  color: #ffe77d;
+  align-self: end;
+  margin: 53px 24px 0 0;
+  font: 400 20px Inter, sans-serif;
+}
+
+.pickup_frequency_input {
+  background-color: #fff;
+  align-self: stretch;
+  display: flex;
+  width: 200px;
+  max-width: 100%;
+  height: 41px;
+  flex-direction: column;
+  color: #000;
+  margin: auto 0;
+  font: 400 30px Inter, sans-serif;
+}
+
+.popup_add_client_btn {
+  color: #000;
+  white-space: nowrap;
+  border-radius: 50px;
+  background-color: #ffe77d;
+  align-self: center;
+  margin-top: 48px;
+  justify-content: center;
+  padding: 21px 60px 21px 46px;
+  font: 700 25px Inter, sans-serif;
 }
