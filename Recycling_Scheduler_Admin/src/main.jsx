@@ -8,7 +8,7 @@ import "./stylesheets/index.css";
 import Clients from "./pages/clients";
 import Users from "./pages/users";
 import Reports from "./pages/reports";
-import Add_Client from "./pages/add_client";
+import Client_Details from "./pages/client_details";
 
 const router = createBrowserRouter([
   {
@@ -24,9 +24,9 @@ const router = createBrowserRouter([
     element: <Reports />,
   },
   {
-    path: "/add",
-    element: <Add_Client />,
-  },
+    path: "/client_details",
+    element: <Client_Details />,
+  }, 
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
