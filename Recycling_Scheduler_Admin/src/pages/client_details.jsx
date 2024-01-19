@@ -4,6 +4,7 @@ import logo from "../images/logo.png";
 import user_icon from "../images/user_icon.png";
 import edit_icon from "../images/edit_icon.png";
 import delete_icon from "../images/delete_icon.png";
+import Popup from 'reactjs-popup';
 
 /*can add padding to the Pickup Date to fix spacing issue - line 63*/
 export default function Client_Details() {
@@ -52,7 +53,36 @@ export default function Client_Details() {
                     Avg. Weight / Pickup: # Kilos
                     <br /><br />
                 </div>
-                <img src={edit_icon} className="edit_icon" />
+                <Popup trigger={<img src={edit_icon} className="edit_icon" />} /*onClick={reduceOpacity()}*/ closeOnDocumentClick>
+                    <div className="popup_body">
+                        <div className="popup">
+                            <div className="client_info">
+                            <div className="popup_header">
+                                <div className="popup_title">Edit Client</div>
+                                <button className="popup_close">X</button>
+                            </div>
+                            <div className="popup_field">
+                                <div className="popup_field_title">Client Name:</div>
+                                <input type="text" className="popup_field_input" />
+                            </div>
+                            <div className="popup_field">
+                                <div className="popup_field_title">Location:</div>
+                                <input type="text" className="popup_field_input" />
+                            </div>
+                            <div className="popup_field">
+                                <div className="popup_field_title">Location 2:</div>
+                                <input type="text" className="popup_field_input" />
+                            </div>
+                            <button className="add_location_btn">+ Add Location</button>
+                            <div className="popup_field">
+                                <div className="popup_field_title">Pickup Frequency:</div>
+                                <input type="text" className="pickup_frequency_input" placeholder="2 / Week" />
+                            </div>
+                            </div>
+                            <button className="popup_add_client_btn">Edit Client</button>
+                        </div>
+                    </div>
+                </Popup>
                 <img src={delete_icon} className="delete_icon" />
                 </div>
             </div>

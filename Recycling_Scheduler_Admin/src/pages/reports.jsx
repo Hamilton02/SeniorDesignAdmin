@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import logo from "../images/logo.png";
 import user_icon from "../images/user_icon.png";
+import Popup from 'reactjs-popup';
 
 export default function Reports() {
     return (
@@ -22,7 +23,31 @@ export default function Reports() {
             </div>
             <div className="table">
                 <div className="search_add_btns">
-                    <button className="create_report_btn"><div className="create_report">+ Create Report</div></button>
+                    <Popup trigger={<button className="create_report_btn"><div className="create_report">+ Create Report</div></button>} /*onClick={reduceOpacity()}*/ closeOnDocumentClick>
+                        <div className="popup_body">
+                            <div className="popup">
+                                <div className="client_info">
+                                <div className="popup_header">
+                                    <div className="popup_title">Create Report</div>
+                                    <button className="popup_close">X</button>
+                                </div>
+                                <div className="popup_field">
+                                    <div className="popup_field_title">Client Name:</div>
+                                    <input type="text" className="popup_field_input" />
+                                </div>
+                                <div className="popup_field">
+                                    <div className="popup_field_title">Columns Shown:</div>
+                                    <input type="text" className="popup_field_input" />
+                                </div>
+                                <div className="popup_field">
+                                    <div className="popup_field_title">Date Range:</div>
+                                    <input type="text" className="popup_field_input" placeholder="XX/XX - XX/XX"/>
+                                </div>
+                                </div>
+                                <button className="popup_add_client_btn">Create Report</button>
+                            </div>
+                        </div>
+                    </Popup>
                 </div>
                 <div className="row-th">
                     <div className="th">
