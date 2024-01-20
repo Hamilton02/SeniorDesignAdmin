@@ -1,14 +1,27 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import logo from "../images/logo.png";
 import user_icon from "../images/user_icon.png";
 import search_icon from "../images/search_icon.png";
 import Popup from 'reactjs-popup';
 
+import calls from '../helpers/calls'
+
 export default function Clients() {
     /*function reduceOpacity() {
         document.getElementsByClassName("body").style.opacity = "50";
     }*/
+
+    const [clients, setClients] = useState()
+
+    useEffect(() => {
+        function getClients(){
+            calls.getClients(setClients);
+        }
+
+        getClients();
+    }, [])
+
 
     return (
         <>
