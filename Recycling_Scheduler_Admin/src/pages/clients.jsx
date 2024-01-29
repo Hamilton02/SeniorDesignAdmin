@@ -1,9 +1,11 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef} from 'react'
 import { Link } from 'react-router-dom';
 import logo from "../images/logo.png";
 import user_icon from "../images/user_icon.png";
 import search_icon from "../images/search_icon.png";
 import Popup from 'reactjs-popup';
+import ClientRow from '../components/ClientRow';
+import '../stylesheets/table.css'
 
 import calls from '../helpers/calls'
 
@@ -12,15 +14,29 @@ export default function Clients() {
         document.getElementsByClassName("body").style.opacity = "50";
     }*/
 
+    //clients stateful variable and function
     const [clients, setClients] = useState()
+    let rows = useRef();
 
+
+    //useEffect hook to get clients list from API on render
     useEffect(() => {
-        function getClients(){
+        async function getClients(){
             calls.getClients(setClients);
         }
 
         getClients();
     }, [])
+
+    useEffect(() => {
+        async function generateClient(){
+            rows.current = clients.map ((client) => 
+                <tr><ClientRow client={client} /></tr>
+            )
+        }
+
+        generateClient()
+    }, [clients])
 
 
     return (
@@ -76,58 +92,21 @@ export default function Clients() {
                         </div>
                     </Popup>
                 </div>
-                <div className="row-th">
-                    <div className="th">
-                        <div>Client Name</div>
-                        <div>Locations</div>
-                        <div>Avg. Usability</div>
-                        <div>Pickup Frequency</div>
-                    </div>
-                </div>
-                <div className="table-rows">
-                    <div className="td-top-corners-yellow">
-                        <Link to={'/client_details'}><div>Client</div></Link>
-                        <div>X</div>
-                        <div>X%</div>
-                        <div>Twice a week</div>
-                    </div>
-                    <div className="td-rect-white">
-                        <div>Client</div>
-                        <div>X</div>
-                        <div>X%</div>
-                        <div>Twice a week</div>
-                    </div>
-                    <div className="td-rect-yellow">
-                        <div>Client</div>
-                        <div>X</div>
-                        <div>X%</div>
-                        <div>Twice a week</div>
-                    </div>
-                    <div className="td-rect-white">
-                        <div>Client</div>
-                        <div>X</div>
-                        <div>X%</div>
-                        <div>Twice a week</div>
-                    </div>
-                    <div className="td-rect-yellow">
-                        <div>Client</div>
-                        <div>X</div>
-                        <div>X%</div>
-                        <div>Twice a week</div>
-                    </div>
-                    <div className="td-rect-white">
-                        <div>Client</div>
-                        <div>X</div>
-                        <div>X%</div>
-                        <div>Twice a week</div>
-                    </div>
-                    <div className="td-bottom-corners-yellow">
-                        <div>Client</div>
-                        <div>X</div>
-                        <div>X%</div>
-                        <div>Twice a week</div>
-                    </div>
-                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Client Name</th>
+                            <th>Locations</th>
+                            <th>Avg. Usability</th>
+                            <th>Pickup Frequency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {rows.current}
+                    </tbody>
+                </table>
+                
+                
             </div>
         </div>
         </>

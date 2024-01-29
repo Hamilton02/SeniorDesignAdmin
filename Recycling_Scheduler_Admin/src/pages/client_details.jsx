@@ -1,13 +1,32 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom';
 import logo from "../images/logo.png";
 import user_icon from "../images/user_icon.png";
 import edit_icon from "../images/edit_icon.png";
 import delete_icon from "../images/delete_icon.png";
 import Popup from 'reactjs-popup';
+import calls from '../helpers/calls';
+import { useParams } from 'react-router-dom';
 
 /*can add padding to the Pickup Date to fix spacing issue - line 63*/
 export default function Client_Details() {
+
+  const [client, setClient] = useState(null);
+
+  const {clientid } = useParams()
+
+  useEffect(() => {
+    async function getClient(){
+      calls.getClient(clientid, setClient)
+    }
+
+    getClient()
+  }, [])
+
+
+
+
+
     return (
       <>
         <div className="header">
@@ -34,21 +53,21 @@ export default function Client_Details() {
             <div className="client_details_box">
                 <div className="client_details">
                 <div className="client_info">
-                    <div className="client_name">Client Name</div>
+                    <div className="client_name">{client.clientname}</div>
                     <div className="client_contact_info">
-                    Contact Name
+                    {client.first_name} {client.last_name}
                     <br /><br />
-                    Contact@email.com
+                    {client.contact_email}
                     <br /><br />
-                    (###) ###-####{" "}
+                    {client.contact_number}
                     </div>
                 </div>
                 <div className="pickup_info">
-                    Locations: #
+                    Locations: {client.locations}
                     <br /><br />
-                    Pickup Frequency: X per week
+                    Pickup Frequency: {client.pickup_frequency} per week
                     <br /><br />
-                    Avg. Percent Usable: #%
+                    Avg. Percent Usable: {client.avg_usability}%
                     <br /><br />
                     Avg. Weight / Pickup: # Kilos
                     <br /><br />

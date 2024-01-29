@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     element: <Reports />,
   },
   {
-    path: "/client_details",
+    path: "/client_details/:clientid",
     element: <Client_Details />,
   }, 
 ]);

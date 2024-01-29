@@ -1,0 +1,62 @@
+table{
+  width: 70vw;
+  position: relative;
+}
+
+table > thead {
+  width: 70vw;  
+  height: 6rem;
+  position: sticky;
+  top: 0rem;
+  font: 700 30px Inter, sans-serif;
+}
+
+table > thead > tr {
+  border-radius: 32px;
+  padding: 20px 40px;
+  width: 70vw;
+  background-color: #a0c49a;
+}
+
+table > thead > tr > th{
+  color: #FFFFFF;
+}
+
+
+table > tbody {
+  width: 70vw; 
+  font: 400 30px Inter, sans-serif;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+table > tbody > tr {
+  border-radius: 32px;
+  padding: 20px 40px;
+  width: 70vw;
+  height: 3rem;
+
+}
+
+
+td {
+  text-align: center;
+  padding: 2rem;
+}
+
+tbody > tr:nth-child(2n+1){
+  background-color: #FFF8DB;
+}
+
+tbody > tr:nth-child(2n){
+  background-color: #FFFFFF;
+}
+
+table, th, td{
+  border: 0px solid transparent;
+}
+
+
+
+
+

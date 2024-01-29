@@ -12,8 +12,21 @@ const getClients = (setClients) => {
   }); 
 }
 
+const getClient = (id, setClient) => {
+  const fetchPromise = userServices.get(id, "clients/getclient");
+  fetchPromise.then(response => {
+    console.log(response)
+    setClient(response.data[0])
+    return response.data
+  })
+  .catch((e) => {
+    console.log(e);
+  }); 
+}
+
 const calls = {
-  getClients
+  getClients,
+  getClient
 }
 
 export default calls;
