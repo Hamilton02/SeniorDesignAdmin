@@ -6,6 +6,7 @@ import search_icon from "../images/search_icon.png";
 import Popup from 'reactjs-popup';
 import ClientRow from '../components/ClientRow';
 import '../stylesheets/table.css'
+import AddClientPopup from '../components/Popups/AddClientPopup';
 
 import calls from '../helpers/calls'
 
@@ -30,13 +31,22 @@ export default function Clients() {
 
     useEffect(() => {
         async function generateClient(){
-            rows.current = clients.map ((client) => 
-                <tr><ClientRow client={client} /></tr>
-            )
+            if(clients){
+                rows.current = clients.map ((client) => 
+                    <tr><ClientRow client={client} /></tr>
+                )
+            }else{
+                setTimeout(() => {
+                    generateClient()
+                }, 1000)
+            }
         }
 
         generateClient()
     }, [clients])
+
+
+
 
 
     return (
@@ -61,35 +71,8 @@ export default function Clients() {
                         <input type="text" className="search_input" placeholder="Search" />
                         <button className="search_icon_btn"><img src={search_icon} className="search_icon"/></button>
                     </div>
-                    <Popup trigger={<button className="add_client_btn"><div className="add_client">+ Add Client</div></button>} /*onClick={reduceOpacity()}*/ closeOnDocumentClick>
-                        <div className="popup_body">
-                            <div className="popup">
-                                <div className="client_info">
-                                <div className="popup_header">
-                                    <div className="popup_title">Add Client</div>
-                                    <button className="popup_close">X</button>
-                                </div>
-                                <div className="popup_field">
-                                    <div className="popup_field_title">Client Name:</div>
-                                    <input type="text" className="popup_field_input" />
-                                </div>
-                                <div className="popup_field">
-                                    <div className="popup_field_title">Location:</div>
-                                    <input type="text" className="popup_field_input" />
-                                </div>
-                                <div className="popup_field">
-                                    <div className="popup_field_title">Location 2:</div>
-                                    <input type="text" className="popup_field_input" />
-                                </div>
-                                <button className="add_location_btn">+ Add Location</button>
-                                <div className="popup_field">
-                                    <div className="popup_field_title">Pickup Frequency:</div>
-                                    <input type="text" className="pickup_frequency_input" placeholder="0 / Week" />
-                                </div>
-                                </div>
-                                <button className="popup_add_client_btn">Add Client</button>
-                            </div>
-                        </div>
+                    <Popup trigger={<button className="add_client_btn"><div className="add_client">+ Add Client</div></button>} onClick={() => calls.createClient()} closeOnDocumentClick>
+                       <AddClientPopup /> 
                     </Popup>
                 </div>
                 <table>

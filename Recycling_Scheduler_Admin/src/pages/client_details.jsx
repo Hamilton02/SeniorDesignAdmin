@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import { Link } from 'react-router-dom';
 import logo from "../images/logo.png";
 import user_icon from "../images/user_icon.png";
@@ -24,10 +24,10 @@ export default function Client_Details() {
   }, [])
 
 
+  let display = useRef()
 
-
-
-    return (
+  if(client){
+    display.current = (
       <>
         <div className="header">
           <img src={logo} className="logo" />
@@ -171,5 +171,17 @@ export default function Client_Details() {
           </div>
         </div>
       </>
+    )
+  }else{
+
+    setTimeout(() => {
+      calls.getClient(clientid, setClient)
+    }, 1000)
+    display.current=<></>
+  }
+
+
+    return (
+      display.current
     );
 }

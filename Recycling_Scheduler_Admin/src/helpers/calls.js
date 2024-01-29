@@ -24,9 +24,23 @@ const getClient = (id, setClient) => {
   }); 
 }
 
+const createClient = (data, setResponse) => {
+  console.log(data)
+  const fetchPromise = userServices.create(data, "clients/createclient");
+  fetchPromise.then(response => {
+    console.log(response)
+    setResponse(response)
+    return response.data
+  })
+  .catch((e) => {
+    console.log(e);
+  }); 
+}
+
 const calls = {
   getClients,
-  getClient
+  getClient,
+  createClient
 }
 
 export default calls;

@@ -294,6 +294,7 @@
   height: 659px;
   flex-direction: column;
   padding: 38px 0;
+  overflow-y: auto;
 }
 
 .client_info {
