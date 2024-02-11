@@ -29,14 +29,23 @@
   padding-right: 20px;
 }
 
+.body_client_details {
+  width: 100%;
+  height: 100%;
+  background-color: #afd2e9;
+  display: flex;
+  flex-direction: column;
+  opacity: 100;
+}
+
 .body {
   width: 100%;
   height: 100%;
   background-color: #afd2e9;
   display: flex;
   flex-direction: row;
-  gap: 122px;
   opacity: 100;
+  gap: 122px;
 }
 
 .search_add_btns {
@@ -126,7 +135,7 @@
   line-height: normal;
   width: 364px;
   height: 453px;
-  padding-top: 80px;
+  padding-top: 40px;
   padding-left: 63px;
 }
 
@@ -137,7 +146,7 @@
   flex-direction: column;
   width: 100%;
   padding: 40px 30px;
-  gap: 30px;
+  gap: 15px;
 }
 
 .list div {
@@ -147,13 +156,21 @@
   background-color: #ffe77d;
   justify-content: center;
   align-items: center;
-  padding: 23px 60px;
-  font: 700 30px Inter, sans-serif;
+  padding: 10px 30px;
+  font: 700 25px Inter, sans-serif;
   text-align: center;
 }
 
 .list div Link {
   text-decoration: none;
+}
+
+.table_client_details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-bottom: 30px;
+  margin-top: -50px;
 }
 
 .table {
@@ -395,6 +412,12 @@
   font: 700 25px Inter, sans-serif;
 }
 
+.nav_and_client_details {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
 .client_details_and_table {
   display: flex;
   flex-direction: column;
@@ -408,7 +431,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 41px 60px 26px;
+  padding: 40px 60px 26px;
+  top: -10px;
+  position: relative;
 }
 
 .client_details {
@@ -469,6 +494,11 @@
   align-self: end;
   margin-top: 69px;
   max-width: 100%;
+}
+
+.client_details_table {
+  padding-left: 63px;
+  max-width: 1800px;
 }
 
 .client_details_table .th {

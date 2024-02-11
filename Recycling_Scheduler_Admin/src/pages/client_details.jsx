@@ -34,7 +34,8 @@ export default function Client_Details() {
           <div className="title"></div>
           <img src={user_icon} className="user_icon" />
         </div>
-        <div className="body">
+        <div className="body_client_details">
+          <div className="nav_and_client_details">
           <div className="leftnav">
             <div className="list">
               <div>
@@ -105,8 +106,10 @@ export default function Client_Details() {
                 <img src={delete_icon} className="delete_icon" />
                 </div>
             </div>
-            <div className="client_details_table">
-            <div className="table">
+          </div>
+          </div>
+          <div className="client_details_table">
+            <div className="table_client_details">
                 <div className="row-th">
                 <div className="th">
                     <div className="firstItem">Pickup Date</div>
@@ -166,7 +169,6 @@ export default function Client_Details() {
                     <div>N/A</div>
                 </div>
                 </div>
-            </div>
             </div>
           </div>
         </div>
