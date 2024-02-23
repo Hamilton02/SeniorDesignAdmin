@@ -37,10 +37,50 @@ const createClient = (data, setResponse) => {
   }); 
 }
 
+const getUsers = (setUsers) => {
+  const fetchPromise = userServices.getAll("users/getusers");
+  fetchPromise.then(response => {
+    console.log(response)
+    setClients(response.data)
+    return response.data
+  })
+  .catch((e) => {
+    console.log(e);
+  }); 
+}
+
+const getUser = (id, setUser) => {
+  const fetchPromise = userServices.get(id, "users/getuser");
+  fetchPromise.then(response => {
+    console.log(response)
+    setClient(response.data[0])
+    return response.data
+  })
+  .catch((e) => {
+    console.log(e);
+  }); 
+}
+
+const createUser = (data, setResponse) => {
+  console.log(data)
+  const fetchPromise = userServices.create(data, "users/createuser");
+  fetchPromise.then(response => {
+    console.log(response)
+    setResponse(response)
+    return response.data
+  })
+  .catch((e) => {
+    console.log(e);
+  }); 
+}
+
 const calls = {
   getClients,
   getClient,
-  createClient
+  createClient,
+  getUsers,
+  getUser,
+  createUser
 }
 
 export default calls;
